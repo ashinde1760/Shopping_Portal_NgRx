@@ -1,0 +1,61 @@
+<body>
+    <app-nav-bar [deviceXs]="deviceXs"></app-nav-bar>
+    <div fxLayout="row" fxLayout.xs="column">
+        <div fxFlex="100%" fxFlex.xs="100%">
+            <mat-card class="bgcolor" fxLayoutAlign="center center">
+                <form [formGroup]="addProductFormGroup" (ngSubmit)="addProduct()" autocomplete="off">
+                    <mat-card-header>
+
+                        <p>
+                            <mat-label class="add_product">Add Product</mat-label>
+                        </p>
+                    </mat-card-header>
+
+                    <mat-card-content>
+                        <p class="space">
+                            <mat-form-field appearance="standard">
+                                <mat-label>Product Name</mat-label>
+                                <input matInput formControlName="productName" placeholder="Product Name">
+                            </mat-form-field>
+                        </p>
+
+                        <p class="space">
+                            <mat-form-field appearance="standard">
+                                <mat-label>Description</mat-label>
+                                <textarea matInput formControlName="description" placeholder="Enter Product Description"></textarea>
+                            </mat-form-field>
+                        </p>
+
+                        <p class="space">
+                            <mat-form-field appearance="standard">
+                                <mat-label>Product Price</mat-label>
+                                <input matInput formControlName="price" placeholder="Product Price">
+                            </mat-form-field>
+                        </p>
+
+                        <p class="space">
+                            <mat-form-field appearance="standard" class="invisible">
+                                <mat-label>Product Quantity</mat-label>
+                                <input hidden="true" matInput  formControlName="quantity" placeholder="Product Quantity">
+                            </mat-form-field>
+                        </p>
+
+                        <p class="space">
+                            <mat-form-field appearance="standard">
+                                <mat-label>Image</mat-label>
+                                <input matInput formControlName="image" placeholder="Online Image Path">
+                            </mat-form-field>
+                        </p>
+
+                        <button [disabled]="addProductFormGroup.invalid" mat-raised-button type="submit" color="primary">
+                          <mat-icon>save</mat-icon> Add
+              Product</button>
+
+              
+                    </mat-card-content>
+                </form>
+            </mat-card>
+        </div>
+    </div>
+</body>
+

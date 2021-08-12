@@ -1,0 +1,97 @@
+<body>
+    <app-nav-bar [deviceXs]="deviceXs"></app-nav-bar>
+    <div fxLayout="row" fxLayout.xs="column">
+        <div fxFlex="100%" fxFlex.xs="100%">
+            <mat-card class="bgcolor" fxLayoutAlign="center center">
+                <form [formGroup]="addAddressFormGroup" (ngSubmit)="addAddress()" autocomplete="off">
+                    <mat-card-header>
+
+                        <p>
+                            <mat-label class="add_product">Address</mat-label>
+                        </p>
+                    </mat-card-header>
+
+                    <mat-card-content>
+
+                        <p class="space">
+                            <mat-form-field appearance="standard">
+                                <mat-label>Area</mat-label>
+                                <input matInput formControlName="Area" placeholder="Area">
+                            </mat-form-field>
+                        </p>
+
+                        <p class="space">
+                            <mat-form-field appearance="standard">
+                                <mat-label>Landmark</mat-label>
+                                <input matInput formControlName="Landmark" placeholder="Landmark">
+                            </mat-form-field>
+                        </p>
+
+                        <p class="space">
+                            <mat-form-field appearance="standard">
+                                <mat-label>Pincode</mat-label>
+                                <input matInput formControlName="Pincode" placeholder="Pincode">
+                            </mat-form-field>
+                        </p>
+
+
+                        <p class="space">
+                            <mat-form-field appearance="standard">
+                                <mat-label>Town/City</mat-label>
+                                <input matInput formControlName="Town" placeholder="Town">
+                            </mat-form-field>
+                        </p>
+
+
+                        <p class="space">
+                            <mat-form-field appearance="standard">
+                                <mat-label>State</mat-label>
+
+                                <mat-select [(value)]="selected">
+                                    <mat-option value="Andhra Pradesh"> Andhra Pradesh</mat-option>
+                                    <mat-option value="Arunachal Pradesh"> Arunachal Pradesh</mat-option>
+                                    <mat-option value="Assam"> Assam</mat-option>
+                                    <mat-option value="Assam"> Assam</mat-option>
+                                    <mat-option value="Chhattisgarh"> Chhattisgarh</mat-option>
+                                    <mat-option value="Goa"> Goa</mat-option>
+                                    <mat-option value="Gujarat">Gujarat</mat-option>
+                                    <mat-option value="Haryana"> Haryana</mat-option>
+                                    <mat-option value="Himachal Pradesh"> Himachal Pradesh</mat-option>
+                                    <mat-option value="Jammu and Kashmir Srinagar"> Jammu and Kashmir Srinagar</mat-option>
+                                    <mat-option value="Jharkhand"> Jharkhand</mat-option>
+                                    <mat-option value="Karnataka"> Karnataka</mat-option>
+                                    <mat-option value="Kerala"> Kerala</mat-option>
+                                    <mat-option value="Madhya Pradesh">Madhya Pradesh</mat-option>
+                                    <mat-option value="Maharashtra"> Maharashtra</mat-option>
+                                    <mat-option value="Manipur"> Manipur</mat-option>
+                                    <mat-option value="Meghalaya"> Meghalaya</mat-option>
+                                    <mat-option value="Mizoram">Mizoram</mat-option>
+                                    <mat-option value="Nagaland">Nagaland</mat-option>
+                                    <mat-option value="Odisha">Odisha</mat-option>
+                                    <mat-option value="Punjab"> Punjab</mat-option>
+                                    <mat-option value="Rajasthan">Rajasthan</mat-option>
+                                    <mat-option value="Sikkim"> Sikkim</mat-option>
+                                    <mat-option value="Tamil Nadu">Tamil Nadu</mat-option>
+                                    <mat-option value="Telangana">Telangana </mat-option>
+                                    <mat-option value="Tripura">Tripura</mat-option>
+                                    <mat-option value="Uttar Pradesh"> Uttar Pradesh</mat-option>
+                                    <mat-option value="Uttarakhand">Uttarakhand</mat-option>
+                                    <mat-option value="West Bengal">West Bengal</mat-option>
+                                </mat-select>
+                            </mat-form-field>
+                        </p>
+
+
+
+
+
+                        <button [disabled]="addAddressFormGroup.invalid" mat-raised-button type="submit"
+                            color="primary">
+                            <mat-icon>save</mat-icon> Add Address
+                        </button>
+                    </mat-card-content>
+                </form>
+            </mat-card>
+        </div>
+    </div>
+</body>

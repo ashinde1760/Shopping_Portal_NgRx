@@ -1,0 +1,34 @@
+<app-nav-bar [deviceXs]="deviceXs"></app-nav-bar>
+
+<div fxLayout="row" fxLayout.xs="column">
+    <div fxFlex="100%" fxFlex.xs="100%">
+
+        <div class="content">
+            <div fxLayout="row wrap" fxLayoutGap="16px grid" fxLayoutAlign="center center">
+
+
+                <div fxFlex=70% fxFlex.xs=100%>
+                    <mat-card>
+                        <mat-card-header>
+                            <mat-card-title>
+                                <a routerLink="/product/home">
+                                    <mat-icon>arrow_back</mat-icon>
+                                </a>
+                                Product Details</mat-card-title>
+                        </mat-card-header>
+                        <div fxLayoutAlign="center center" fxLayout.xs="column" class="content">
+                          <br>
+                            <img mat-card-image src="{{collection.image}}" alt="">
+                            <mat-card-content>
+                                <small>Name:</small> {{collection.productName}} <br> <br>
+                                <small>Description:</small> {{collection.description}} <br> <br>
+                                <small>Price:</small> {{collection.price}} INR
+                            </mat-card-content>
+                        </div>
+                    </mat-card>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

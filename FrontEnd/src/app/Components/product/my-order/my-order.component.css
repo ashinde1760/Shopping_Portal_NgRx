@@ -1,0 +1,127 @@
+/* table, th, td {
+  border: 1px solid black;
+} */
+
+table {
+  width: 100%;
+}
+h1{
+  text-align: center;
+  color: navy;
+  font-weight: bold;
+}
+
+@media(max-width:858px)
+{
+  mat-table{
+    margin-left: 10px;
+  }
+}
+
+
+
+table {
+  width: 100%;
+  padding: 20px;
+}
+h1{
+text-align: center;
+border: 10px;
+}
+th.mat-sort-header-sorted {
+  color: black;
+}
+/* .mat-footer-row,
+.mat-header-row,
+.mat-row {
+    display: inline-flex;
+    min-width: 100%;
+} */
+/*
+the .mat-cell ,.mat-header-row {
+  min-width: 200rem;
+} */
+
+
+/* -------------------------- */
+
+.tableDesign
+{
+  padding:20px;
+  background-color:antiquewhite;
+}
+
+/* .mat-column-Father_Name {
+  flex: 0 0 10%;
+}
+.mat-column-Course_Name {
+  flex: 0 0 10%;
+}
+.mat-column-Branch_Name {
+  flex: 0 0 10%;
+}
+.mat-column-Student_Name {
+  flex: 0 0 10%;
+}
+.mat-column-Gender {
+  flex: 0 0 10%;
+}
+.mat-column-actions {
+  flex: 0 0 10%;
+}
+.mat-column-Roll_no {
+  flex: 0 0 10%;
+}
+.mat-column-id {
+  flex: 0 0 10%;
+}
+ */
+
+
+ .example-container {
+  display: flex;
+  flex-direction: column;
+  max-height: 500px;
+  min-width: 300px;
+}
+
+.mat-table {
+  overflow: auto;
+  max-height: 500px;
+}
+
+.mobile-label {
+  display: none;
+}
+
+@media(max-width: 600px) {
+  .mobile-label {
+    width: 80px;
+    display: inline-block;
+        font-weight: bold;
+  }
+
+  .mat-header-row {
+    display: none;
+  }
+
+  .mat-row {
+    flex-direction: column;
+    align-items: start;
+    padding: 8px 24px;
+  }
+}
+
+
+table {
+  width: 100%;
+}
+
+.mat-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+.status{
+  color: green;
+}

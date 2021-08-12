@@ -1,0 +1,119 @@
+<app-nav-bar [deviceXs]="deviceXs"></app-nav-bar>
+<div class="data">
+  <div *ngIf="grandTotal==0">
+    <h2 style="text-align: center; color: red; margin-top: 30px;">There is no Product in a Cart</h2>
+    <h2 style="text-align: center;"> <a routerLink="/product/home">Continue With Shopping</a></h2>
+  </div>
+  <div class="col-sm-8" fxLayout="row" fxLayout.xs="column">
+    <div fxFlex="100%" fxFlex.xs="100%">
+
+      <div class="content">
+        <div fxLayout="row wrap" fxLayoutGap="16px grid" fxLayoutAlign="start center">
+          <div fxFlex=100% fxFlex.xs=100% *ngFor="let cartDetails of cartDetails">
+            <div>
+              <mat-card>
+                <mat-card-header>
+                  <mat-card-title>
+                    <a routerLink="/product/home">
+                      <mat-icon>arrow_back</mat-icon>
+                    </a>
+                    Product Details
+                  </mat-card-title>
+                </mat-card-header>
+                <div fxLayoutAlign="start center" fxLayout.xs="column" class="content">
+                  <img mat-card-image src="{{cartDetails.image}}" alt="">
+                  <mat-card-content>
+                    <small>Name:</small> {{cartDetails.productName}} <br> <br>
+                    <small>Description:</small> {{cartDetails.description}} <br> <br>
+                    <small>Price:</small> {{cartDetails.price | currency:'₹'}}
+
+
+                    <div fxLayout.xs="start center" class="xyz">
+                      <br><br>
+                      <button
+                        (click)="onDecrement(cartDetails.id,cartDetails.quantity,cartDetails.price,cartDetails.total)">-</button>
+                      <input type="text" class="counter" value="{{cartDetails.quantity}}">
+                      <button
+                        (click)="onIncrement(cartDetails.id,cartDetails.quantity,cartDetails.price,cartDetails.total)">+</button>
+                      <br>
+                      <h3> sub-total: {{cartDetails.price * cartDetails.quantity | currency:'₹'}}</h3>
+
+
+                      <!-- <lib-counter (countChanged)="handleCountChanged($event)"></lib-counter> -->
+
+                        
+                        <lib-buttion [buttonText]="'Remove'" [iconName]="'delete'" (click)='delete(cartDetails.id)'></lib-buttion>
+
+                      <!-- <mybutton title="" icon="" (onclick)=""></mybutton> -->
+
+                    </div>
+
+
+                  </mat-card-content>
+
+                </div>
+              </mat-card>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+
+
+
+
+
+  <div class="col-sm-8" fxLayout="row" fxLayout.xs="column">
+    <div fxFlex="100%" fxFlex.xs="100%">
+
+      <div class="content">
+        <div fxLayout="row wrap" fxLayoutGap="16px grid" fxLayoutAlign="start center">
+          <div fxFlex=100% fxFlex.xs=100%>
+            <div>
+              <div class="totalAmount">
+                <mat-card class="matcontents">
+                  <mat-card-header class="header1">
+                    <mat-card-title>
+                      TOTAL
+                    </mat-card-title>
+                  </mat-card-header>
+                  <div class="content">
+
+                    <mat-card-content>
+                      <div fxLayout="row" fxLayoutAlign="center center">
+                        <br>
+                        <h2>Total:
+                          {{grandTotal | currency:'₹'}} </h2>
+                      </div>
+                      <div fxLayout="row" fxLayoutAlign="center center">
+                        <br />
+
+                          <lib-buttion [buttonText]="'Proceed to Buy'" [iconName]="'shop'" (click)="Buy(grandTotal)"></lib-buttion>
+                      </div>
+
+
+                    </mat-card-content>
+
+                  </div>
+                </mat-card>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+    </div>
+  </div>
+</div>

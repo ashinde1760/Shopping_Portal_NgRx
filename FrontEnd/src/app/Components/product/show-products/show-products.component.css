@@ -1,0 +1,55 @@
+.content {
+    padding: 16px;
+}
+
+img {
+    width: 250px;
+    margin-left: 20px;
+    height: 220px;
+}
+
+mat-card {
+    padding: 0%;
+}
+
+mat-card-header {
+    border-bottom: 1px solid darksalmon;
+    background-color: lawngreen;
+    padding: 0px;
+}
+
+
+mat-card-title {
+    padding: 10px;
+}
+
+mat-icon {
+    color: white;
+}
+
+mat-card-content {
+    margin-left: 10px;
+    font-size: larger;
+    font-weight: bold;
+}
+
+button {
+    background-color: green;
+    padding: 00px 30px;
+    color: white;
+}
+
+mat-card-footer {
+    margin: inherit;
+    border-top: 1px solid lightsteelblue;
+    padding: 10px;
+}
+
+a {
+    text-decoration: none;
+    margin-top: 10px;
+    font-size: 15px;
+    padding: 00px 10px;
+    cursor: pointer;
+    color: blue;
+}

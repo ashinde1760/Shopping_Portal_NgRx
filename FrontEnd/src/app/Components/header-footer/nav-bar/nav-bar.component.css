@@ -1,0 +1,109 @@
+* {
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+.sticky {
+    background-color: rgb(65, 133, 211);
+    padding: 0px;
+    position: static;
+    width: 100%;
+    top: 0px;
+    z-index: 10;
+    position: relative;
+}
+nav{
+    width: 100%;
+}
+.main_logo {
+    width: 40px;
+    margin-left: 70px;
+    margin-top: 0px;
+}
+
+.xtra_small {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    list-style: none;
+}
+
+.logo {
+    color: white;
+    line-height: 50px;
+    padding: 0px 20px;
+    margin-top: 0%;
+    font-weight: 600;
+    font-size: larger;
+    margin-left: -10px;
+}
+button.active,
+button:hover {
+    background: rgb(132, 171, 241);
+    transition: .5s;
+}
+
+mat-icon{
+    color: black;
+}
+
+.mat-drawer { 
+    background-color:gray;
+    color:#fff;
+    scroll-behavior: unset;
+}
+
+.toolbar-spacer {
+    flex: 1 1 auto;
+}
+.menus{
+    display: block;
+    padding: 5px;
+    color: white;
+    font-size: larger;
+    width: 100%;
+    text-align: left;
+    display: block;
+    margin-left: 10px;
+}
+.allButtons{
+    margin-top: 30px;
+    
+}
+.menu{
+    display: block;
+    text-align: right;
+}
+.side{
+    margin-left: -25%;
+    margin-top: 55px;
+}
+
+.menuIcon{
+    margin-top: -3%;
+    margin-left: -90%;
+    color: white;
+    text-align: left;
+    font-size: xx-large;
+}
+/* .content{
+    position: static;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-100%,-100%, -50%);
+    text-align: center;
+    z-index: -1;
+    width: 100%;
+    padding: 0 30px;
+    color: #1b1b1b;
+  } */
+
+  mat-sidenav {
+    width: 70%;
+    text-align: center;
+    position: fixed;
+    height: 100%;
+    cursor: not-allowed;
+    overflow: hidden;
+}
