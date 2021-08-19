@@ -24,7 +24,7 @@
     "@ngrx/effects": "^12.2.0",
     "@ngrx/store": "^12.2.0",
     "@ngrx/store-devtools": "^12.2.0",
-    "@shivrajgodle/mydemo-lib": "0.0.7",
+    "@shivrajgodle/mydemo-lib": "^2.0.0",
     "angular-cc-library": "^2.1.2",
     "auth-guard": "^1.0.12",
     "lodash": "^4.17.21",

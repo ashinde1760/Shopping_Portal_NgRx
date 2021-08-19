@@ -49,23 +49,23 @@ export class PaymentDetailComponent implements OnInit {
   }
 
 //the code is to enter a space after every 4 digit in credit card no.
-  @HostListener('input', ['$event'])
-  onKeyDown(event: KeyboardEvent) {
-    const input = event.target as HTMLInputElement;
+  // @HostListener('input', ['$event'])
+  // onKeyDown(event: KeyboardEvent) {
+  //   const input = event.target as HTMLInputElement;
 
-    let trimmed = input.value.replace(/\s+/g, '');
-    if (trimmed.length > 16) {
-      trimmed = trimmed.substr(0, 16);
-    }
+  //   let trimmed = input.value.replace(/\s+/g, '');
+  //   if (trimmed.length > 16) {
+  //     trimmed = trimmed.substr(0, 16);
+  //   }
 
-    let numbers = [];
-    for (let i = 0; i < trimmed.length; i += 4) {
-      numbers.push(trimmed.substr(i, 4));
-    }
+  //   let numbers = [];
+  //   for (let i = 0; i < trimmed.length; i += 4) {
+  //     numbers.push(trimmed.substr(i, 4));
+  //   }
 
-    input.value = numbers.join(' ');
+  //   input.value = numbers.join(' ');
 
-  }
+  // }
 
 
 

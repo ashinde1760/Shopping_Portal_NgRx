@@ -23,20 +23,22 @@
                         <img mat-card-image src="../assets/mv1.jpeg" alt="">
 
                         <!-- hidden="true" -->
-                        <!-- <p class="space" >
+                        <p class="space" >
                             <mat-form-field appearance="standard">
 
                                 <input  matInput formControlName="cardHolderName" placeholder="Card Holder Name">
                                 <mat-icon matSuffix>account_circle</mat-icon>
 
                             </mat-form-field>
-                        </p> -->
+                        </p>
 
                         <p>
-                            <mat-form-field appearance="standard" class="space">
-                                    <input id="cardNumber" matInput type="text" formControlName="cardNumber" placeholder="xxxx xxxx xxxx xxxx" credit-card>
-                                    <mat-icon matSuffix>payment</mat-icon>
-                            </mat-form-field>
+                            
+                                    <!-- <input id="cardNumber" matInput type="text" formControlName="cardNumber" placeholder="xxxx xxxx xxxx xxxx" credit-card>
+                                     -->
+                                    <lib-ccinput-box [placeholderText]="'xxxx xxxx xxxx xxxx'" [iconText]="'credit_card'"></lib-ccinput-box> 
+                                    
+                      
                         </p>
 
                         <p class="space" fxLayout="row" fxLayoutAlign="center center">
