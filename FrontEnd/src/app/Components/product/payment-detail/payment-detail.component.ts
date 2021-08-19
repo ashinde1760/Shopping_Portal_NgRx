@@ -10,7 +10,7 @@ import { ServiceService } from 'src/app/Service/service.service';
 import { getCartData } from '../store/product.selector';
 import Swal from 'sweetalert2';
 import { AppState } from 'src/app/store/app.state';
-
+import { Directive, HostListener, ElementRef } from '@angular/core';
 
 @Component({
   selector: 'app-payment-detail',
@@ -27,8 +27,8 @@ export class PaymentDetailComponent implements OnInit {
   mediaSub: any;
   deviceXs: any;
   userId: string;
-  cardNo!:string;
-  count!:number;
+  cardNo!: string;
+  count!: number;
   datas = {
     productName: '',
     price: 0,
@@ -48,23 +48,45 @@ export class PaymentDetailComponent implements OnInit {
     this.cardPaymentDetails();
   }
 
+//the code is to enter a space after every 4 digit in credit card no.
+  @HostListener('input', ['$event'])
+  onKeyDown(event: KeyboardEvent) {
+    const input = event.target as HTMLInputElement;
+
+    let trimmed = input.value.replace(/\s+/g, '');
+    if (trimmed.length > 16) {
+      trimmed = trimmed.substr(0, 16);
+    }
+
+    let numbers = [];
+    for (let i = 0; i < trimmed.length; i += 4) {
+      numbers.push(trimmed.substr(i, 4));
+    }
+
+    input.value = numbers.join(' ');
+
+  }
+
+
+
+
   ngOnInit(): void {
     //this is for responsiveness
     this.mediaSub = this.mediaObserver.media$.subscribe((res: MediaChange) => {
       this.deviceXs = res.mqAlias === "xs" ? true : false;
-      this.count=0;
+      this.count = 0;
     })
   }
 
   cardPaymentDetails() {
     this.paymentDetails = this.formBuilder.group(
       {
-        cardHolderName: new FormControl('', [Validators.required, Validators.pattern("[a-zA-Z ]{2,30}")]),
+//        cardHolderName: new FormControl('', [Validators.required, Validators.pattern("[a-zA-Z ]{2,30}")]),
         cardNumber: new FormControl('', [Validators.required]),
         CVV: new FormControl('', [Validators.required, Validators.pattern("[0-9]{3}$")]),
       }
     );
- }
+  }
 
   payment() {
     //getting data from "store cart" which user has ordered
@@ -94,7 +116,7 @@ export class PaymentDetailComponent implements OnInit {
 
       //calling service to store data at backend
       this.service.PostOrderData(this.datas).subscribe(result => {
-        },
+      },
         (error) => {
           alert("something went wrong...");
         })

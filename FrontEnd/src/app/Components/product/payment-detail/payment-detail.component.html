@@ -22,26 +22,22 @@
                         &nbsp;
                         <img mat-card-image src="../assets/mv1.jpeg" alt="">
 
-                        <br>
-                        Card Type:<span class="scheme">{{ccNumber.resolvedScheme$ | async}}</span>
-
-                        <p class="space">
+                        <!-- hidden="true" -->
+                        <!-- <p class="space" >
                             <mat-form-field appearance="standard">
 
-                                <input matInput formControlName="cardHolderName" placeholder="Card Holder Name">
+                                <input  matInput formControlName="cardHolderName" placeholder="Card Holder Name">
                                 <mat-icon matSuffix>account_circle</mat-icon>
 
                             </mat-form-field>
+                        </p> -->
+
+                        <p>
+                            <mat-form-field appearance="standard" class="space">
+                                    <input id="cardNumber" matInput type="text" formControlName="cardNumber" placeholder="xxxx xxxx xxxx xxxx" credit-card>
+                                    <mat-icon matSuffix>payment</mat-icon>
+                            </mat-form-field>
                         </p>
-
-
-                        <mat-form-field appearance="standard" class="space">
-                            <input matInput formControlName="cardNumber" type="tel" ccNumber #ccNumber="ccNumber"
-                                placeholder="Card Number">
-
-
-                            <mat-icon matSuffix>payment</mat-icon>
-                        </mat-form-field>
 
                         <p class="space" fxLayout="row" fxLayoutAlign="center center">
                             <mat-form-field appearance="standard" class="month">
