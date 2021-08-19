@@ -109,4 +109,3 @@ export class PaymentDetailComponent implements OnInit {
     this.mediaSub.unsubscribe();
   }
 }
-

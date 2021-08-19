@@ -33,16 +33,15 @@
 
                             </mat-form-field>
                         </p>
-                        
-
-                            <mat-form-field appearance="standard" class="space">
-                                <input matInput formControlName="cardNumber" type="tel" ccNumber 
-                                        #ccNumber="ccNumber" placeholder="Card Number">
 
 
-                                <!-- <input matInput (keyup)="applyFilter($event)" formControlName="cardNumber" placeholder="Card Number"> -->
-                                <mat-icon matSuffix>payment</mat-icon>
-                            </mat-form-field>
+                        <mat-form-field appearance="standard" class="space">
+                            <input matInput formControlName="cardNumber" type="tel" ccNumber #ccNumber="ccNumber"
+                                placeholder="Card Number">
+
+
+                            <mat-icon matSuffix>payment</mat-icon>
+                        </mat-form-field>
 
                         <p class="space" fxLayout="row" fxLayoutAlign="center center">
                             <mat-form-field appearance="standard" class="month">
@@ -80,8 +79,6 @@
                                 </mat-select>
                             </mat-form-field>
                         </p>
-
-
 
                         <p>
                             <mat-form-field appearance="standard" class="cvv">

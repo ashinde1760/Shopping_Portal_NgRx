@@ -76,13 +76,15 @@ mat-icon{
     text-align: right;
 }
 .side{
-    margin-left: -25%;
+    position: fixed;
+    margin-left: -5%;
     margin-top: 55px;
 }
 
 .menuIcon{
-    margin-top: -3%;
-    margin-left: -90%;
+    position: absolute;
+    margin-top: 0%;
+    margin-left: 00%;
     color: white;
     text-align: left;
     font-size: xx-large;
